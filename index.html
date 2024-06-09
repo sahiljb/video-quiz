@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>YouTube Video with Quiz</title>
+		<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			position: relative;
+		}
+        body {
+            font-family: Arial, sans-serif;
+        }
+		.wrapper {
+			width: 1366px;
+			height: 720px;
+		}
+		.quiz:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.9);
+		}
+        .quiz {
+            display: none;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			align-items: center;
+			padding-top: 50px;
+			color: #fff;
+        }
+        .quiz-question {
+            margin-bottom: 10px;
+        }
+		input[type="text"] {
+			padding: 8px 16px;
+			min-width: 300px;
+		}
+		button {
+			padding: 8px 16px;
+		}
+    </style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div id="player"></div>
+
+			<div id="quiz1" class="quiz">
+				<div class="quiz-question">What is JavaScript?</div>
+				<input type="text" id="answer1">
+				<button onclick="submitAnswer(1)">Submit</button>
+			</div>
+
+			<div id="quiz2" class="quiz">
+				<div class="quiz-question">What is a variable?</div>
+				<input type="text" id="answer2">
+				<button onclick="submitAnswer(2)">Submit</button>
+			</div>
+
+			<div id="quiz3" class="quiz">
+				<div class="quiz-question">Explain what is a function?</div>
+				<input type="text" id="answer3">
+				<button onclick="submitAnswer(3)">Submit</button>
+			</div>
+		</div>
+
+		<script>
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        var currentQuiz = 0;
+        var quizTimes = [120, 300, 540]; // times in seconds for 2 min, 5 min, 9 min
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '720',
+                width: '1366',
+                videoId: 'W6NZfCO5SIk',
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING) {
+                checkQuiz();
+            }
+        }
+
+        function checkQuiz() {
+            var currentTime = player.getCurrentTime();
+            if (currentQuiz < quizTimes.length && currentTime >= quizTimes[currentQuiz]) {
+                player.pauseVideo();
+                document.getElementById('quiz' + (currentQuiz + 1)).style.display = 'block';
+            } else {
+                setTimeout(checkQuiz, 1000);
+            }
+        }
+
+        function submitAnswer(quizNumber) {
+            var answer = document.getElementById('answer' + quizNumber).value;
+            if (answer.trim() !== "") {
+                document.getElementById('quiz' + quizNumber).style.display = 'none';
+                currentQuiz++;
+                player.playVideo();
+            } else {
+                alert("Please answer the question to continue.");
+            }
+        }
+    </script>
+	</body>
+</html>
