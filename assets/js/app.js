@@ -84,15 +84,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	}
 
 	function submitAnswer(quizNumber) {
-		var answer = document.getElementById("answer" + quizNumber).value;
-		if (answer.trim() !== "") {
-			const quizElement = document.getElementById("quiz" + quizNumber);
+		event.preventDefault(); // Prevent default form submission behavior
+		const quizElement = document.getElementById("quiz" + quizNumber);
+		const inputs = quizElement.querySelectorAll("input[type='radio']:checked");
+
+		if (inputs.length === 2) {
 			quizElement.style.display = "none";
-			quizElement.parentElement.style.display = "none";
+			quizElement.classList.add("d-none");
 			currentQuiz++;
 			player.playVideo();
 		} else {
-			alert("Please answer the question to continue.");
+			alert("Please answer all questions to continue.");
 		}
 	}
 
@@ -106,6 +108,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 	// Function to reset the quiz
 	function resetQuiz() {
+		if (player) {
+			player.pauseVideo(); // Pause the active video
+		}
 		document.querySelectorAll(".quiz").forEach((quiz) => {
 			quiz.style.display = "none";
 			quiz.parentElement.style.display = "none";
@@ -190,6 +195,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		const markCompletedBtn = document.getElementById(
 			"markCompletedBtn" + noteId
 		);
+		const backToPdfBtn = document.getElementById("backToPdf" + noteId);
 		const submitQuizBtn = document.getElementById("submitQuiz" + noteId);
 		let scale = 1; // Initial scale for zoom
 
@@ -215,6 +221,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			pdfFrame.style.display = "none";
 			pdfHeader.style.display = "none";
 			pdfQuiz.classList.remove("d-none");
+		});
+
+		backToPdfBtn.addEventListener("click", function () {
+			pdfFrame.style.display = "block";
+			pdfHeader.style.display = "flex";
+			pdfQuiz.classList.add("d-none");
 		});
 
 		submitQuizBtn.addEventListener("click", function () {

@@ -19,7 +19,8 @@
 		<link rel="stylesheet" href="https://mentor.w3creatives.com/css/sarnia.css">
 		<style
 			type="text/css">.nav-item .active.nav-link{border-bottom:1px solid #fff;border-radius:0!important}</style>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="assets/css/app.css">
@@ -213,7 +214,7 @@
 																<div id="player"></div>
 															</div>
 															<div class="d-none notes text-notes" id="textNote1">
-																<h3>Note 1</h3>
+																<h3>Notes</h3>
 																<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
 																	Consequuntur dignissimos excepturi libero! Aliquid facere
 																	excepturi sit labore magni quibusdam placeat itaque. Quibusdam
@@ -223,49 +224,62 @@
 																	aliquid fugiat commodi beatae, labore harum at ea incidunt, sit
 																	enim magnam blanditiis praesentium?</p>
 															</div>
-															<div class="d-none notes text-notes" id="textNote2">
-																<h3>Note 2</h3>
-																<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-																	Consequuntur dignissimos excepturi libero! Aliquid facere
-																	excepturi sit labore magni quibusdam placeat itaque. Quibusdam
-																	nobis reprehenderit porro, dicta minima incidunt error eum.</p>
-															</div>
 															<div id="pdfNote1" class="pdf-notes d-none">
 																<div class="pdf-header">
 																	<div class="zoom">
-																		<button class="btn btn-az-primary" id="zoomInBtn1"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom In</button>
-																		<button class="btn btn-az-primary" id="zoomOutBtn1"><i class="fa-solid fa-magnifying-glass-minus"></i> Zoom Out</button>
+																		<button class="btn btn-az-primary" id="zoomInBtn1">
+																			<i class="fa-solid fa-magnifying-glass-plus"></i> Zoom In
+																		</button>
+																		<button class="btn btn-az-primary" id="zoomOutBtn1">
+																			<i class="fa-solid fa-magnifying-glass-minus"></i> Zoom Out
+																		</button>
 																	</div>
 																	<div class="actions">
-																		<button class="btn btn-az-primary" id="printBtn1"><i class="fa-solid fa-print"></i> Print</button>
-																		<button class="btn btn-az-primary" id="markCompletedBtn1"><i class="fa-solid fa-circle-check"></i> Mark as Completed</button>
+																		<button class="btn btn-az-primary" id="printBtn1">
+																			<i class="fa-solid fa-print"></i> Print
+																		</button>
+																		<button class="btn btn-az-primary" id="markCompletedBtn1">
+																			<i class="fa-solid fa-circle-check"></i> Mark as Completed
+																		</button>
 																	</div>
 																</div>
-																<iframe id="pdfFrame1" src="notes/pdf/ch1/ch1note.pdf" width="100%" height="600px"></iframe>
+																<iframe id="pdfFrame1" src="notes/pdf/ch1/ch1note.pdf"
+																	width="100%" height="600px"></iframe>
 																<div id="pdfQuiz1" class="pdf-quiz d-none">
-																	<div class="form-group">
-																		<label for="answer1" class="quiz-question">What is
-																			JavaScript?</label>
-																		<input type="text" class="form-control" id="answer1">
+																	<div class="actions mb-4 right">
+																		<button class="btn btn-az-primary" id="backToPdf1">
+																			<i class="fa-solid fa-file-pdf"></i> Back to PDF
+																		</button>
 																	</div>
-																	<div class="form-group">
-																		<label for="answer1" class="quiz-question">What is
-																			JavaScript?</label>
-																		<input type="text" class="form-control" id="answer1">
-																	</div>
-																	<div class="form-group">
-																		<label for="answer1" class="quiz-question">What is
-																			JavaScript?</label>
-																		<input type="text" class="form-control" id="answer1">
-																	</div>
-																	<div class="form-group">
-																		<label for="answer1" class="quiz-question">What is
-																			JavaScript?</label>
-																		<input type="text" class="form-control" id="answer1">
-																	</div>
-																	<div class="form-group">
-																		<button class="btn btn-az-primary" submit-quiz>Submit</button>
-																	</div>
+																	<form action>
+																		<div class="form-group">
+																			<label for="answer1" class="quiz-question">Did you want to
+																				proceed to the next step?</label>
+																			<div class="form-check">
+																				<input class="form-check-input" type="radio" name="q1"
+																					id="q1" value="yes">
+																				<label class="form-check-label" for="q1">Yes</label>
+																			</div>
+																			<div class="form-check">
+																				<input class="form-check-input" type="radio" name="q1"
+																					id="q2" value="no">
+																				<label class="form-check-label" for="q2">No</label>
+																			</div>
+																		</div>
+																		<div class="form-group">
+																			<label for="answer1" class="quiz-question">Do you agree with
+																				the terms?</label>
+																			<div class="form-check">
+																				<input class="form-check-input" type="checkbox" name="q2"
+																					id="q2" value="yes">
+																				<label class="form-check-label" for="q2">Yes</label>
+																			</div>
+																		</div>
+																		<div class="form-group">
+																			<button class="btn btn-az-primary"
+																				submit-quiz>Submit</button>
+																		</div>
+																	</form>
 																</div>
 															</div>
 														</div>
@@ -276,38 +290,30 @@
 									</div>
 
 									<div class="quiz-wrapper">
-
 										<div id="quiz1" class="quiz py-4">
-											<div class="form-group">
-												<label for="answer1" class="quiz-question">What is
-													JavaScript?</label>
-												<input type="text" class="form-control" id="answer1">
-											</div>
-											<div class="form-group">
-												<button class="btn btn-az-primary" submit-quiz>Submit</button>
-											</div>
-										</div>
-
-										<div id="quiz2" class="quiz py-4">
-											<div class="form-group">
-												<label for="answer2" class="quiz-question">What is a
-													variable?</label>
-												<input type="text" class="form-control" id="answer2">
-											</div>
-											<div class="form-group">
-												<button class="btn btn-az-primary" submit-quiz>Submit</button>
-											</div>
-										</div>
-
-										<div id="quiz3" class="quiz py-4">
-											<div class="form-group">
-												<label for="answer3" class="quiz-question">Explain what is a
-													function?</label>
-												<input type="text" class="form-control" id="answer3">
-											</div>
-											<div class="form-group">
-												<button class="btn btn-az-primary" submit-quiz>Submit</button>
-											</div>
+											<!-- <form action=""> -->
+												<div class="form-group">
+													<label for="answer1" class="quiz-question">Did you want to proceed to the next step?</label>
+													<div class="form-check">
+														<input class="form-check-input" type="radio" name="q1" id="q1a1" value="yes">
+														<label class="form-check-label" for="q1a1">Yes</label>
+													</div>
+													<div class="form-check">
+														<input class="form-check-input" type="radio" name="q1" id="q1a2" value="no">
+														<label class="form-check-label" for="q1a2">No</label>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="answer1" class="quiz-question">Do you agree with the terms?</label>
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" name="q2" id="q2a1" value="yes">
+														<label class="form-check-label" for="q2a1">Yes</label>
+													</div>
+												</div>
+												<div class="form-group">
+													<button class="btn btn-az-primary" submit-quiz>Submit</button>
+												</div>
+											<!-- </form> -->
 										</div>
 									</div>
 
@@ -317,7 +323,9 @@
 						<div class="col-md-4">
 							<h3>Progress</h3>
 							<div class="progress" style="height: 20px;">
-								<div class="progress-bar" role="progressbar" style="width: 42%; height: 100%;" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100">42%</div>
+								<div class="progress-bar" role="progressbar"
+									style="width: 42%; height: 100%;" aria-valuenow="42" aria-valuemin="0"
+									aria-valuemax="100">42%</div>
 							</div>
 							<br>
 							<h3>Curriculum</h3>
@@ -337,32 +345,19 @@
 										<li
 											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item active"
 											data-type="video" data-lecture-id="zBPeGR48_vE">
-											<h6 class="mb-0 d-flex"><div class="lecture-name"><i class="fa-solid fa-video"></i> JavaScript Introduction</div><div class="badge"><i class="fa-solid fa-circle-check"></i></div></h6>
-										</li>
-										<li
-											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
-											data-type="video" data-lecture-id="sEGC-adSKXo">
-											<h6 class="mb-0"><i class="fa-solid fa-video"></i> Development Environment Setting</h6>
-										</li>
-										<li
-											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
-											data-type="video" data-lecture-id="KXxXr0RxGDE">
-											<h6 class="mb-0"><i class="fa-solid fa-video"></i> Basic JavaScript Syntax</h6>
+											<h6 class="mb-0 d-flex"><i class="fa-solid fa-video"></i> Video
+												Unit</h6>
 										</li>
 										<li
 											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
 											data-type="text" data-note-id="textNote1">
-											<h6 class="mb-0"><i class="fa-solid fa-note-sticky"></i> JavaScript Notes</h6>
-										</li>
-										<li
-											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
-											data-type="text" data-note-id="textNote2">
-											<h6 class="mb-0"><i class="fa-solid fa-note-sticky"></i> JavaScript Notes 2</h6>
+											<h6 class="mb-0"><i class="fa-solid fa-note-sticky"></i> Notes
+												Unit</h6>
 										</li>
 										<li
 											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
 											data-type="pdf" data-note-id="pdfNote1">
-											<h6 class="mb-0"><i class="fa-solid fa-file-pdf"></i> JavaScript Notes</h6>
+											<h6 class="mb-0"><i class="fa-solid fa-file-pdf"></i> PDF Unit</h6>
 										</li>
 									</ul>
 								</div>
@@ -403,7 +398,7 @@
 					</div>
 					<div class="col-md-5" style="text-align: center; ">
 						<span class="color-black">Developed by <a target="_blank"
-								class="color-black" href="https://www.w3creatives.com">W3  Creatives</a>
+								class="color-black" href="https://www.w3creatives.com">W3 Creatives</a>
 							&amp;<a target="_blank" class="color-black"
 								href="https://www.jumpute.com"> Powered by Jumpute</a></span>
 					</div>
