@@ -4,127 +4,410 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>YouTube Video with Quiz</title>
-		<style>
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-			position: relative;
-		}
-        body {
-            font-family: Arial, sans-serif;
-        }
-		.wrapper {
-			width: 1366px;
-			height: 720px;
-		}
-		.quiz:before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(0,0,0,0.9);
-		}
-        .quiz {
-            display: none;
-			position: absolute;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			text-align: center;
-			align-items: center;
-			padding-top: 50px;
-			color: #fff;
-        }
-        .quiz-question {
-            margin-bottom: 10px;
-        }
-		input[type="text"] {
-			padding: 8px 16px;
-			min-width: 300px;
-		}
-		button {
-			padding: 8px 16px;
-		}
-    </style>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet"
+			href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
+		<link rel="stylesheet"
+			href="https://mentor.w3creatives.com/lib/select2/css/select2.min.css">
+		<script
+			src="https://mentor.w3creatives.com/lib/jquery/jquery.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+
+		<link rel="stylesheet" href="https://mentor.w3creatives.com/css/lambton.css">
+		<link rel="stylesheet" href="https://mentor.w3creatives.com/css/sarnia.css">
+		<link rel="stylesheet"
+			href="https://mentor.w3creatives.com/lib/typicons.font/typicons.css">
+		<style
+			type="text/css">.nav-item .active.nav-link{border-bottom:1px solid #fff;border-radius:0!important}</style>
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="assets/css/app.css">
 	</head>
 	<body>
-		<div class="wrapper">
-			<div id="player"></div>
-
-			<div id="quiz1" class="quiz">
-				<div class="quiz-question">What is JavaScript?</div>
-				<input type="text" id="answer1">
-				<button onclick="submitAnswer(1)">Submit</button>
+		<div class="diagonal3 ">
+			<div class="container ">
+				<div class="row">
+					<div class="col-md-4 logo-block">
+						<a href="/">
+							<div style="padding: 10px; border: 1px solid #333">
+								<h1 style="font-size: 35px;">MPAC</h1>
+								<h3>For Mentors &amp; Mentees</h3>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-2 diagonal">
+					</div>
+					<div class="col-md-3 diagonal2">
+						<div class>
+							<p class="welcome">
+								MPAC Address <br>
+								Phone: 123-456-7890 <br>
+								Fax: 123-456-7890
+							</p>
+						</div>
+					</div>
+				</div>
 			</div>
+		</div>
+		<nav class="navbar1 navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<div class="mynavbar">
+					<div class>
+						<button class="navbar-toggler" type="button" data-toggle="collapse"
+							data-target="#navbarSupportedContent"
+							aria-controls="navbarSupportedContent" aria-expanded="false"
+							aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
 
-			<div id="quiz2" class="quiz">
-				<div class="quiz-question">What is a variable?</div>
-				<input type="text" id="answer2">
-				<button onclick="submitAnswer(2)">Submit</button>
+						<div class="nav-header">
+							<div class="nav-title">
+								<p class="nav-mini">For Mentor &amp; Mentee <br>Seeking a Course
+									Match</p>
+							</div>
+
+						</div>
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav mr-auto">
+								<li class="nav-item foldy">
+									<a class="nav-link " href="/">Home <span
+											class="sr-only">(current)</span></a>
+								</li>
+								<li class="nav-item">
+									<a class="current-opportunities nav-link active"
+										href="/available_apprenticeships">Courses</a>
+
+								</li>
+								<li class="nav-item dropdown employer-menu">
+									<a class="nav-link dropdown-toggle " href="#" id="navbarDropdown"
+										role="button" data-toggle="dropdown" aria-haspopup="true"
+										aria-expanded="false">
+										Mentor
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href="/employer_job_list">Open Courses</a>
+										<a class="dropdown-item" href="/employer_job_post">Post Course</a>
+										<a class="dropdown-item" href="/employer_update_profile">Profile</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item employer-register"
+											href="/signup/mentor?link=register">Register</a>
+										<a class="dropdown-item employer-sign-in"
+											href="/signup/mentor?link=signin">Sign In</a>
+									</div>
+								</li>
+								<li class="nav-item dropdown apprentice-menu">
+									<a class="nav-link dropdown-toggle " href="#" id="navbarDropdown1"
+										role="button" data-toggle="dropdown" aria-haspopup="true"
+										aria-expanded="false">
+										Mentee
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+										<a class="dropdown-item" href="/employee_job_matches">Matched Courses
+										</a>
+										<a class="dropdown-item" href="/employee_update_profile">Profile</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item apprentice-register"
+											href="/signup/mentee?link=register">Register</a>
+										<a class="dropdown-item apprentice-sign-in"
+											href="/signup/mentee?link=signin">Sign In</a>
+									</div>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link " href="/frequently-asked-questions">FAQs</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link " href="/contact">Contact</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
+		</nav>
+		<div class="container1">
+			<div class="dropdown az-profile-menu contrast-div">
+				<a href="javascript:void(0);" class="btntogglediv contrast-position"
+					aria-hidden="true" id="contrast-icon-white-chair">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+						fill="currentColor" width="1em">
+						<g><path
+								d="M60.4,78.9c-2.2,4.1-5.3,7.4-9.2,9.8c-4,2.4-8.3,3.6-13,3.6c-6.9,0-12.8-2.4-17.7-7.3c-4.9-4.9-7.3-10.8-7.3-17.7c0-5,1.4-9.5,4.1-13.7c2.7-4.2,6.4-7.2,10.9-9.2l-0.9-7.3c-6.3,2.3-11.4,6.2-15.3,11.8C7.9,54.4,6,60.6,6,67.3c0,5.8,1.4,11.2,4.3,16.1s6.8,8.8,11.7,11.7c4.9,2.9,10.3,4.3,16.1,4.3c7,0,13.3-2.1,18.9-6.2c5.7-4.1,9.6-9.5,11.7-16.2l-5.7-11.4C63.5,70.4,62.5,74.8,60.4,78.9z"></path><path
+								d="M93.8,71.3l-11.1,5.5L70,51.4c-0.6-1.3-1.7-2-3.2-2H41.3l-0.9-7.2h22.7v-7.2H39.6L37.5,19c2.5,0.3,4.8-0.5,6.7-2.3c1.9-1.8,2.9-4,2.9-6.6c0-2.5-0.9-4.6-2.6-6.3c-1.8-1.8-3.9-2.6-6.3-2.6c-2,0-3.8,0.6-5.4,1.8c-1.6,1.2-2.7,2.7-3.2,4.6c-0.3,1-0.4,1.8-0.3,2.3l5.4,43.5c0.1,0.9,0.5,1.6,1.2,2.3c0.7,0.6,1.5,0.9,2.4,0.9h26.4l13.4,26.7c0.6,1.3,1.7,2,3.2,2c0.6,0,1.1-0.1,1.6-0.4L97,77.7L93.8,71.3z"></path></g>
+					</svg>
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item zoom-out-a" href="javascript:void(0);">
+						<span class>
+							<svg version="1.1" style="color: seagreen"
+								xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+								<path fill="currentColor"
+									d="M256 200v16c0 4.25-3.75 8-8 8h-56v56c0 4.25-3.75 8-8 8h-16c-4.25 0-8-3.75-8-8v-56h-56c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h56v-56c0-4.25 3.75-8 8-8h16c4.25 0 8 3.75 8 8v56h56c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z"></path>
+							</svg>
+						</span>
+						Decrease Text
+					</a>
 
-			<div id="quiz3" class="quiz">
-				<div class="quiz-question">Explain what is a function?</div>
-				<input type="text" id="answer3">
-				<button onclick="submitAnswer(3)">Submit</button>
+					<a class="dropdown-item zoom-in-a" href="javascript:void(0);">
+						<span class>
+							<svg version="1.1" style="color: seagreen"
+								xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+								<path fill="currentColor"
+									d="M256 200v16c0 4.25-3.75 8-8 8h-56v56c0 4.25-3.75 8-8 8h-16c-4.25 0-8-3.75-8-8v-56h-56c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h56v-56c0-4.25 3.75-8 8-8h16c4.25 0 8 3.75 8 8v56h56c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z"></path>
+							</svg>
+						</span>
+						Increase Text
+					</a>
+
+					<a class="dropdown-item highlighttext" href="javascript:void(0);">
+						<span class>
+							<svg version="1.1" style="color: red" xmlns="http://www.w3.org/2000/svg"
+								width="1em" viewBox="0 0 448 448">
+								<path fill="currentColor"
+									d="M192 360v-272c-75 0-136 61-136 136s61 136 136 136zM384 224c0 106-86 192-192 192s-192-86-192-192 86-192 192-192 192 86 192 192z"></path>
+							</svg>
+						</span>
+						High Contrast
+					</a>
+				</div>
+			</div>
+			<div class="page-body">
+				<div class="container alert d-none ajax-response-container mg-t-4"
+					role="alert">
+					<button type="button" class="close" data-dismiss="alert"
+						aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="page-header-new">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-sm-6 col-xs-6 wd-60p">
+								<h3 class="page-title-new">Opened Apprenticeships</h3>
+							</div>
+							<div class="col-md-8 col-sm-6 col-xs-6 wd-40p align-right-1">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="gray-box">
+								<form id="filterForm"
+									action="https://mentor.w3creatives.com/available_apprenticeships">
+									<div class="row row-xs mg-b-20">
+										<div class="col-md-4">
+											<input type="text" class="form-control location" name="location"
+												placeholder="Search Location" value fdprocessedid="h3mtry5">
+										</div>
+										<div class="col-md-4 mg-t-10 mg-md-t-0">
+											<input type="text" class="form-control title" name="title"
+												placeholder="Search Job Title" value fdprocessedid="c339vg">
+										</div>
+										<div class="col-md-2 mg-t-10 mg-md-t-0">
+											<button type="submit" class="btn btn-az-primary btn-block search"
+												fdprocessedid="ln6186">Search</button>
+										</div>
+										<div class="col-md-2 mg-t-10 mg-md-t-0">
+											<button type="reset"
+												class="btn btn-az-primary btn-block search-reset"
+												fdprocessedid="ho1ee">Reset</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-8">
+							<div class="card">
+								<div class="card-body">
+									<div class="d-flex">
+										<div class="wrapper">
+											<h4 class="card-title">Opened Apprenticeships</h4>
+										</div>
+									</div>
+									<div class="row project-list-showcase">
+										<div class="loadmoreresult w-100">
+											<div
+												class="col-lg-12 col-md-12 col-sm-12 col-12 project-grid loadmorediv ">
+												<div class="project-grid-inner">
+													<div class="d-flex align-items-start w-100">
+														<div class="wrapper w-100">
+															<div class="video-lecture">
+																<div id="player"></div>
+															</div>
+															<div class="d-none notes text-notes" id="textNote1">
+																<h3>Note 1</h3>
+																<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+																	Consequuntur dignissimos excepturi libero! Aliquid facere
+																	excepturi sit labore magni quibusdam placeat itaque. Quibusdam
+																	nobis reprehenderit porro, dicta minima incidunt error eum.</p>
+																<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+																	Aspernatur porro, unde modi accusantium nobis autem ratione
+																	aliquid fugiat commodi beatae, labore harum at ea incidunt, sit
+																	enim magnam blanditiis praesentium?</p>
+															</div>
+															<div class="d-none notes text-notes" id="textNote2">
+																<h3>Note 2</h3>
+																<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+																	Consequuntur dignissimos excepturi libero! Aliquid facere
+																	excepturi sit labore magni quibusdam placeat itaque. Quibusdam
+																	nobis reprehenderit porro, dicta minima incidunt error eum.</p>
+															</div>
+															<div class="d-none notes pdf-notes" id="pdfNote1">
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="position-absolute w-100 h-100 quiz-wrapper">
+										<div id="quiz1" class="quiz p-4 text-light">
+											<div class="form-group">
+												<label for="answer1" class="quiz-question">What is
+													JavaScript?</label>
+												<input type="text" class="form-control" id="answer1">
+											</div>
+											<div class="form-group">
+												<button class="btn btn-az-primary" submit-quiz>Submit</button>
+											</div>
+										</div>
+
+										<div id="quiz2" class="quiz p-4 text-light">
+											<div class="form-group">
+												<label for="answer2" class="quiz-question">What is a
+													variable?</label>
+												<input type="text" class="form-control" id="answer2">
+											</div>
+											<div class="form-group">
+												<button class="btn btn-az-primary" submit-quiz>Submit</button>
+											</div>
+										</div>
+
+										<div id="quiz3" class="quiz p-4 text-light">
+											<div class="form-group">
+												<label for="answer3" class="quiz-question">Explain what is a
+													function?</label>
+												<input type="text" class="form-control" id="answer3">
+											</div>
+											<div class="form-group">
+												<button class="btn btn-az-primary" submit-quiz>Submit</button>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<ul id="tabs" class="nav nav-tabs">
+								<li class="nav-item">
+									<a href data-target="#progress" data-toggle="tab"
+										class="nav-link small text-uppercase active">Progress</a>
+								</li>
+								<li class="nav-item">
+									<a href data-target="#transcript" data-toggle="tab"
+										class="nav-link small text-uppercase ">Transcript</a>
+								</li>
+							</ul>
+							<div id="tabsContent" class="tab-content pt-4">
+								<div id="progress" class="tab-pane fade active show">
+									<ul class="lecture-list list-group d-flex flex-column">
+										<li
+											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item active"
+											data-type="video" data-lecture-id="zBPeGR48_vE">
+											<h6 class="mb-0">[VIDEO] JavaScript Introduction</h6>
+										</li>
+										<li
+											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
+											data-type="video" data-lecture-id="sEGC-adSKXo">
+											<h6 class="mb-0">[VIDEO] Development Environment Setting</h6>
+										</li>
+										<li
+											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
+											data-type="video" data-lecture-id="KXxXr0RxGDE">
+											<h6 class="mb-0">[VIDEO] Basic JavaScript Syntax</h6>
+										</li>
+										<li
+											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
+											data-type="text" data-note-id="textNote1">
+											<h6 class="mb-0">[TEXT] JavaScript Notes</h6>
+										</li>
+										<li
+											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
+											data-type="text" data-note-id="textNote2">
+											<h6 class="mb-0">[TEXT] JavaScript Notes 2</h6>
+										</li>
+										<li
+											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
+											data-type="pdf" data-note-id="pdfNote1">
+											<h6 class="mb-0">[PDF] JavaScript Notes</h6>
+										</li>
+									</ul>
+								</div>
+								<div id="transcript" class="tab-pane fade">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+									praesentium numquam, omnis repellat beatae aut neque sed consequuntur
+									assumenda aliquam? Voluptates autem nam iusto perspiciatis quidem,
+									exercitationem doloribus officiis corporis.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<link rel="stylesheet" type="text/css"
+					href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+				<style
+					type="text/css">#share{width:100%;text-align:right}#share a{width:30px;height:30px;display:inline-block;margin:8px;border-radius:50%;font-size:20px;color:#fff;opacity:.75;transition:opacity .15s linear;text-align:center}#share a:hover{opacity:1}.fa{font-size:20px!important}#share i{position:relative;top:38%;transform:translateY(-50%)}.facebook{background:#3b5998}.twitter{background:#55acee}.linkedin{background:#0077b5}</style>
 			</div>
 		</div>
 
-		<script>
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		<footer class="pt-4 my-md-0 pt-md-5 d-none d-sm-block foot"></footer>
+		<footer class="pt-4 my-md-0 pt-md-5 d-block d-sm-none foot-1"></footer>
+		<div class="container d-none d-sm-block">
+			<div class="p-20-10-a-center">
+				<div class="row">
+					<div class="col-md-5 a-center">
+						© W3 Creatives 2024. All rights reserved.
+					</div>
+					<div class="col-md-2" style="text-align: center; ">
+						<nav class="lead-social-menu mb-4 mb-sm-0">
+							<span class="iconify" data-icon="file-icons:a"></span>
+							<a href="javascript:void(0);" class="zoom-out-a">A-</a>
+							<a href="javascript:void(0);" class="reset-a">A</a>
+							<a href="javascript:void(0);" class="zoom-in-a">A+</a>
+							<a href="javascript:void(0);" class="highlighttext"><i
+									class="typcn icon typcn-adjust-contrast tx-20 text-dark"></i></a>
+						</nav>
+					</div>
+					<div class="col-md-5" style="text-align: center; ">
+						<span class="color-black">Developed by <a target="_blank"
+								class="color-black" href="https://www.w3creatives.com">W3 Creatives</a>
+							&amp;<a target="_blank" class="color-black"
+								href="https://www.jumpute.com"> Powered by Jumpute</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        var player;
-        var currentQuiz = 0;
-        var quizTimes = [120, 300, 540]; // times in seconds for 2 min, 5 min, 9 min
-
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-                height: '720',
-                width: '1366',
-                videoId: 'W6NZfCO5SIk',
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
-
-        function onPlayerReady(event) {
-            event.target.playVideo();
-        }
-
-        function onPlayerStateChange(event) {
-            if (event.data == YT.PlayerState.PLAYING) {
-                checkQuiz();
-            }
-        }
-
-        function checkQuiz() {
-            var currentTime = player.getCurrentTime();
-            if (currentQuiz < quizTimes.length && currentTime >= quizTimes[currentQuiz]) {
-                player.pauseVideo();
-                document.getElementById('quiz' + (currentQuiz + 1)).style.display = 'block';
-            } else {
-                setTimeout(checkQuiz, 1000);
-            }
-        }
-
-        function submitAnswer(quizNumber) {
-            var answer = document.getElementById('answer' + quizNumber).value;
-            if (answer.trim() !== "") {
-                document.getElementById('quiz' + quizNumber).style.display = 'none';
-                currentQuiz++;
-                player.playVideo();
-            } else {
-                alert("Please answer the question to continue.");
-            }
-        }
-    </script>
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script
+			src="https://mentor.w3creatives.com/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script
+			src="https://mentor.w3creatives.com/lib/parsleyjs/parsley.min.js"></script>
+		<script src="https://mentor.w3creatives.com/js/sarnia-lambton.js"></script>
+		<script
+			src="https://mentor.w3creatives.com/lib/select2/js/select2.min.js"></script>
+		<script src="https://mentor.w3creatives.com/js/custom.js"></script>
+		<!-- Custom JS -->
+		<script src="assets/js/app.js"></script>
 	</body>
 </html>
