@@ -231,14 +231,42 @@
 																	nobis reprehenderit porro, dicta minima incidunt error eum.</p>
 															</div>
 															<div id="pdfNote1" class="pdf-notes d-none">
-																	<object data="notes/pdf/ch1/ch1note.pdf" type="application/pdf" width="100%" height="600px">
-																			<p>Your browser does not support PDFs. <a href="path/to/pdf1.pdf">Download the PDF</a>.</p>
-																	</object>
-															</div>
-															<div id="pdfNote2" class="pdf-notes d-none">
-																	<object data="notes/pdf/ch1/ch1note.pdf" type="application/pdf" width="100%" height="600px">
-																			<p>Your browser does not support PDFs. <a href="path/to/pdf2.pdf">Download the PDF</a>.</p>
-																	</object>
+																<div class="pdf-header">
+																	<div class="zoom">
+																		<button class="btn btn-az-primary" id="zoomInBtn1"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom In</button>
+																		<button class="btn btn-az-primary" id="zoomOutBtn1"><i class="fa-solid fa-magnifying-glass-minus"></i> Zoom Out</button>
+																	</div>
+																	<div class="actions">
+																		<button class="btn btn-az-primary" id="printBtn1"><i class="fa-solid fa-print"></i> Print</button>
+																		<button class="btn btn-az-primary" id="markCompletedBtn1"><i class="fa-solid fa-circle-check"></i> Mark as Completed</button>
+																	</div>
+																</div>
+																<iframe id="pdfFrame1" src="notes/pdf/ch1/ch1note.pdf" width="100%" height="600px"></iframe>
+																<div class="pdf-quiz">
+																	<div class="form-group">
+																		<label for="answer1" class="quiz-question">What is
+																			JavaScript?</label>
+																		<input type="text" class="form-control" id="answer1">
+																	</div>
+																	<div class="form-group">
+																		<label for="answer1" class="quiz-question">What is
+																			JavaScript?</label>
+																		<input type="text" class="form-control" id="answer1">
+																	</div>
+																	<div class="form-group">
+																		<label for="answer1" class="quiz-question">What is
+																			JavaScript?</label>
+																		<input type="text" class="form-control" id="answer1">
+																	</div>
+																	<div class="form-group">
+																		<label for="answer1" class="quiz-question">What is
+																			JavaScript?</label>
+																		<input type="text" class="form-control" id="answer1">
+																	</div>
+																	<div class="form-group">
+																		<button class="btn btn-az-primary" submit-quiz>Submit</button>
+																	</div>
+																</div>
 															</div>
 														</div>
 													</div>
@@ -309,7 +337,7 @@
 										<li
 											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item active"
 											data-type="video" data-lecture-id="zBPeGR48_vE">
-											<h6 class="mb-0"><i class="fa-solid fa-video"></i> JavaScript Introduction</h6>
+											<h6 class="mb-0 d-flex"><div class="lecture-name"><i class="fa-solid fa-video"></i> JavaScript Introduction</div><div class="badge"><i class="fa-solid fa-circle-check"></i></div></h6>
 										</li>
 										<li
 											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
@@ -334,11 +362,6 @@
 										<li
 											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
 											data-type="pdf" data-note-id="pdfNote1">
-											<h6 class="mb-0"><i class="fa-solid fa-file-pdf"></i> JavaScript Notes</h6>
-										</li>
-										<li
-											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
-											data-type="pdf" data-note-id="pdfNote2">
 											<h6 class="mb-0"><i class="fa-solid fa-file-pdf"></i> JavaScript Notes</h6>
 										</li>
 									</ul>

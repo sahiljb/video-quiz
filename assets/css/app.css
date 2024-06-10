@@ -1728,6 +1728,17 @@
   display: none;
 }
 
+.pdf-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.pdf-header button {
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
 /*
 .wrapper {
 	width: 1366px;

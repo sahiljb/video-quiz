@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		});
 	});
 
-	// Event listener to handle clicks on lecture list items
+	// Update the event listener to handle PDF notes
 	document.querySelectorAll(".lecture-list__item").forEach((item) => {
 		item.addEventListener("click", function () {
 			// Remove active class from all items
@@ -122,21 +122,28 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			if (lectureType === "video") {
 				activeLectureId = lectureId;
 				document.getElementById("player").style.display = "block";
-				toggleTextNoteVisibility(null);
-				togglePdfNoteVisibility(null);
+				toggleTextNoteVisibility(null); // Hide all text notes
+				togglePdfNoteVisibility(null); // Hide all PDF notes
+				// Hide all quizzes and reset the currentQuiz counter
+				document.querySelectorAll(".quiz").forEach((quiz) => {
+					quiz.style.display = "none";
+					quiz.parentElement.style.display = "none";
+				});
+				currentQuiz = 0;
+				
 				player.loadVideoById(activeLectureId);
 			} else if (lectureType === "text") {
 				activeLectureId = null;
 				document.getElementById("player").style.display = "none";
 				const noteId = this.getAttribute("data-note-id");
-				toggleTextNoteVisibility(noteId);
-				togglePdfNoteVisibility(null);
+				toggleTextNoteVisibility(noteId); // Show the selected text note
+				togglePdfNoteVisibility(null); // Hide all PDF notes
 			} else if (lectureType === "pdf") {
 				activeLectureId = null;
 				document.getElementById("player").style.display = "none";
 				const noteId = this.getAttribute("data-note-id");
-				toggleTextNoteVisibility(null);
-				togglePdfNoteVisibility(noteId);
+				toggleTextNoteVisibility(null); // Hide all text notes
+				togglePdfNoteVisibility(noteId); // Show the selected PDF note
 			} else {
 				console.log("Unsupported lecture type.");
 			}
@@ -158,10 +165,62 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	function togglePdfNoteVisibility(noteId) {
 		document.querySelectorAll(".pdf-notes").forEach((note) => {
 			if (noteId && note.id === noteId) {
-				note.classList.remove("d-none");
+				note.classList.remove("d-none"); // Show the selected PDF note
 			} else {
 				note.classList.add("d-none"); // Hide other PDF notes
 			}
 		});
 	}
+
+	// Function to handle PDF interactions
+	function handlePdfInteractions(noteId) {
+		const pdfFrame = document.getElementById("pdfFrame" + noteId);
+		const pdfHeader = document.querySelector(
+			"#pdfNote" + noteId + " .pdf-header"
+		);
+		const pdfQuiz = document.getElementById("pdfQuiz" + noteId);
+		const printBtn = document.getElementById("printBtn" + noteId);
+		const zoomInBtn = document.getElementById("zoomInBtn" + noteId);
+		const zoomOutBtn = document.getElementById("zoomOutBtn" + noteId);
+		const markCompletedBtn = document.getElementById(
+			"markCompletedBtn" + noteId
+		);
+		const submitQuizBtn = document.getElementById("submitQuiz" + noteId);
+		let scale = 1; // Initial scale for zoom
+
+		printBtn.addEventListener("click", function () {
+			pdfFrame.contentWindow.print();
+		});
+
+		zoomInBtn.addEventListener("click", function () {
+			scale += 0.1;
+			pdfFrame.style.transform = `scale(${scale})`;
+			pdfFrame.style.transformOrigin = "0 0";
+		});
+
+		zoomOutBtn.addEventListener("click", function () {
+			if (scale > 0.1) {
+				scale -= 0.1;
+				pdfFrame.style.transform = `scale(${scale})`;
+				pdfFrame.style.transformOrigin = "0 0";
+			}
+		});
+
+		markCompletedBtn.addEventListener("click", function () {
+			pdfFrame.style.display = "none";
+			pdfHeader.style.display = "none";
+			pdfQuiz.classList.remove("d-none");
+		});
+
+		submitQuizBtn.addEventListener("click", function () {
+			alert("Quiz submitted for PDF " + noteId);
+			// Add your code here to handle the quiz submission
+		});
+	}
+
+	// Call handlePdfInteractions for each PDF note
+	document.querySelectorAll(".pdf-notes").forEach((note) => {
+		const noteId = note.id.replace("pdfNote", "");
+		handlePdfInteractions(noteId);
+	});
 });

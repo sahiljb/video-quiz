@@ -37,6 +37,19 @@ $font: "Roboto", sans-serif;
 	}
 }
 
+.pdf-header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+
+	button {
+		padding: 10px;
+		margin-right: 5px;
+		cursor: pointer;
+	}
+}
+
+
 /*
 .wrapper {
 	width: 1366px;
