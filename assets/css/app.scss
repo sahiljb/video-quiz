@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+@import 'typicons';
+
 $font: "Roboto", sans-serif;
 
 .current-video {
@@ -29,9 +31,6 @@ $font: "Roboto", sans-serif;
 
 .quiz-wrapper {
 	display: none;
-	top: 0;
-	left: 0;
-	background: rgba(0,0,0,0.9);
 
 	.quiz {
 		display: none;

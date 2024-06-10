@@ -17,10 +17,9 @@
 
 		<link rel="stylesheet" href="https://mentor.w3creatives.com/css/lambton.css">
 		<link rel="stylesheet" href="https://mentor.w3creatives.com/css/sarnia.css">
-		<link rel="stylesheet"
-			href="https://mentor.w3creatives.com/lib/typicons.font/typicons.css">
 		<style
 			type="text/css">.nav-item .active.nav-link{border-bottom:1px solid #fff;border-radius:0!important}</style>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="assets/css/app.css">
@@ -195,34 +194,6 @@
 				</div>
 				<div class="container">
 					<div class="row">
-						<div class="col-md-12">
-							<div class="gray-box">
-								<form id="filterForm"
-									action="https://mentor.w3creatives.com/available_apprenticeships">
-									<div class="row row-xs mg-b-20">
-										<div class="col-md-4">
-											<input type="text" class="form-control location" name="location"
-												placeholder="Search Location" value fdprocessedid="h3mtry5">
-										</div>
-										<div class="col-md-4 mg-t-10 mg-md-t-0">
-											<input type="text" class="form-control title" name="title"
-												placeholder="Search Job Title" value fdprocessedid="c339vg">
-										</div>
-										<div class="col-md-2 mg-t-10 mg-md-t-0">
-											<button type="submit" class="btn btn-az-primary btn-block search"
-												fdprocessedid="ln6186">Search</button>
-										</div>
-										<div class="col-md-2 mg-t-10 mg-md-t-0">
-											<button type="reset"
-												class="btn btn-az-primary btn-block search-reset"
-												fdprocessedid="ho1ee">Reset</button>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="row">
 						<div class="col-md-8">
 							<div class="card">
 								<div class="card-body">
@@ -259,8 +230,15 @@
 																	excepturi sit labore magni quibusdam placeat itaque. Quibusdam
 																	nobis reprehenderit porro, dicta minima incidunt error eum.</p>
 															</div>
-															<div class="d-none notes pdf-notes" id="pdfNote1">
-
+															<div id="pdfNote1" class="pdf-notes d-none">
+																	<object data="notes/pdf/ch1/ch1note.pdf" type="application/pdf" width="100%" height="600px">
+																			<p>Your browser does not support PDFs. <a href="path/to/pdf1.pdf">Download the PDF</a>.</p>
+																	</object>
+															</div>
+															<div id="pdfNote2" class="pdf-notes d-none">
+																	<object data="notes/pdf/ch1/ch1note.pdf" type="application/pdf" width="100%" height="600px">
+																			<p>Your browser does not support PDFs. <a href="path/to/pdf2.pdf">Download the PDF</a>.</p>
+																	</object>
 															</div>
 														</div>
 													</div>
@@ -269,8 +247,9 @@
 										</div>
 									</div>
 
-									<div class="position-absolute w-100 h-100 quiz-wrapper">
-										<div id="quiz1" class="quiz p-4 text-light">
+									<div class="quiz-wrapper">
+
+										<div id="quiz1" class="quiz py-4">
 											<div class="form-group">
 												<label for="answer1" class="quiz-question">What is
 													JavaScript?</label>
@@ -281,7 +260,7 @@
 											</div>
 										</div>
 
-										<div id="quiz2" class="quiz p-4 text-light">
+										<div id="quiz2" class="quiz py-4">
 											<div class="form-group">
 												<label for="answer2" class="quiz-question">What is a
 													variable?</label>
@@ -292,7 +271,7 @@
 											</div>
 										</div>
 
-										<div id="quiz3" class="quiz p-4 text-light">
+										<div id="quiz3" class="quiz py-4">
 											<div class="form-group">
 												<label for="answer3" class="quiz-question">Explain what is a
 													function?</label>
@@ -308,14 +287,20 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<ul id="tabs" class="nav nav-tabs">
+							<h3>Progress</h3>
+							<div class="progress" style="height: 20px;">
+								<div class="progress-bar" role="progressbar" style="width: 42%; height: 100%;" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100">42%</div>
+							</div>
+							<br>
+							<h3>Curriculum</h3>
+							<ul id="tabs" class="nav nav-pills">
 								<li class="nav-item">
 									<a href data-target="#progress" data-toggle="tab"
-										class="nav-link small text-uppercase active">Progress</a>
+										class="nav-link text-uppercase active">Progress</a>
 								</li>
 								<li class="nav-item">
 									<a href data-target="#transcript" data-toggle="tab"
-										class="nav-link small text-uppercase ">Transcript</a>
+										class="nav-link text-uppercase ">Transcript</a>
 								</li>
 							</ul>
 							<div id="tabsContent" class="tab-content pt-4">
@@ -324,32 +309,37 @@
 										<li
 											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item active"
 											data-type="video" data-lecture-id="zBPeGR48_vE">
-											<h6 class="mb-0">[VIDEO] JavaScript Introduction</h6>
+											<h6 class="mb-0"><i class="fa-solid fa-video"></i> JavaScript Introduction</h6>
 										</li>
 										<li
 											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
 											data-type="video" data-lecture-id="sEGC-adSKXo">
-											<h6 class="mb-0">[VIDEO] Development Environment Setting</h6>
+											<h6 class="mb-0"><i class="fa-solid fa-video"></i> Development Environment Setting</h6>
 										</li>
 										<li
 											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
 											data-type="video" data-lecture-id="KXxXr0RxGDE">
-											<h6 class="mb-0">[VIDEO] Basic JavaScript Syntax</h6>
+											<h6 class="mb-0"><i class="fa-solid fa-video"></i> Basic JavaScript Syntax</h6>
 										</li>
 										<li
 											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
 											data-type="text" data-note-id="textNote1">
-											<h6 class="mb-0">[TEXT] JavaScript Notes</h6>
+											<h6 class="mb-0"><i class="fa-solid fa-note-sticky"></i> JavaScript Notes</h6>
 										</li>
 										<li
 											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
 											data-type="text" data-note-id="textNote2">
-											<h6 class="mb-0">[TEXT] JavaScript Notes 2</h6>
+											<h6 class="mb-0"><i class="fa-solid fa-note-sticky"></i> JavaScript Notes 2</h6>
 										</li>
 										<li
 											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
 											data-type="pdf" data-note-id="pdfNote1">
-											<h6 class="mb-0">[PDF] JavaScript Notes</h6>
+											<h6 class="mb-0"><i class="fa-solid fa-file-pdf"></i> JavaScript Notes</h6>
+										</li>
+										<li
+											class="list-group-item py-2 px-0 border-left-0 border-right-0 border-0 p-3 lecture-list__item"
+											data-type="pdf" data-note-id="pdfNote2">
+											<h6 class="mb-0"><i class="fa-solid fa-file-pdf"></i> JavaScript Notes</h6>
 										</li>
 									</ul>
 								</div>
@@ -390,7 +380,7 @@
 					</div>
 					<div class="col-md-5" style="text-align: center; ">
 						<span class="color-black">Developed by <a target="_blank"
-								class="color-black" href="https://www.w3creatives.com">W3 Creatives</a>
+								class="color-black" href="https://www.w3creatives.com">W3  Creatives</a>
 							&amp;<a target="_blank" class="color-black"
 								href="https://www.jumpute.com"> Powered by Jumpute</a></span>
 					</div>

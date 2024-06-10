@@ -64,6 +64,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 	function checkQuiz() {
 		var currentTime = player.getCurrentTime();
+		var quizWrapper = document.querySelector(".quiz-wrapper");
+
 		if (
 			currentQuiz < quizTimes.length &&
 			currentTime >= quizTimes[currentQuiz]
@@ -72,6 +74,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			const quizElement = document.getElementById("quiz" + (currentQuiz + 1));
 			quizElement.style.display = "block";
 			quizElement.parentElement.style.display = "block";
+
+			if (quizWrapper) {
+				quizWrapper.scrollIntoView({ behavior: "smooth" });
+			}
 		} else {
 			setTimeout(checkQuiz, 1000);
 		}
@@ -116,13 +122,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			if (lectureType === "video") {
 				activeLectureId = lectureId;
 				document.getElementById("player").style.display = "block";
-				toggleTextNoteVisibility(null); // Hide all text notes
+				toggleTextNoteVisibility(null);
+				togglePdfNoteVisibility(null);
 				player.loadVideoById(activeLectureId);
 			} else if (lectureType === "text") {
 				activeLectureId = null;
 				document.getElementById("player").style.display = "none";
 				const noteId = this.getAttribute("data-note-id");
-				toggleTextNoteVisibility(noteId); // Show the selected text note
+				toggleTextNoteVisibility(noteId);
+				togglePdfNoteVisibility(null);
+			} else if (lectureType === "pdf") {
+				activeLectureId = null;
+				document.getElementById("player").style.display = "none";
+				const noteId = this.getAttribute("data-note-id");
+				toggleTextNoteVisibility(null);
+				togglePdfNoteVisibility(noteId);
 			} else {
 				console.log("Unsupported lecture type.");
 			}
@@ -133,9 +147,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	function toggleTextNoteVisibility(noteId) {
 		document.querySelectorAll(".text-notes").forEach((note) => {
 			if (noteId && note.id === noteId) {
-				note.classList.remove("d-none"); // Show the selected text note
+				note.classList.remove("d-none");
 			} else {
-				note.classList.add("d-none"); // Hide other text notes
+				note.classList.add("d-none");
+			}
+		});
+	}
+
+	// Function to toggle the visibility of PDF notes
+	function togglePdfNoteVisibility(noteId) {
+		document.querySelectorAll(".pdf-notes").forEach((note) => {
+			if (noteId && note.id === noteId) {
+				note.classList.remove("d-none");
+			} else {
+				note.classList.add("d-none"); // Hide other PDF notes
 			}
 		});
 	}
