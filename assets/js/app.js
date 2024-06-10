@@ -104,6 +104,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		});
 	});
 
+	// Function to reset the quiz
+	function resetQuiz() {
+		document.querySelectorAll(".quiz").forEach((quiz) => {
+			quiz.style.display = "none";
+			quiz.parentElement.style.display = "none";
+		});
+		currentQuiz = 0;
+	}
+
 	// Update the event listener to handle PDF notes
 	document.querySelectorAll(".lecture-list__item").forEach((item) => {
 		item.addEventListener("click", function () {
@@ -113,6 +122,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 				.forEach((i) => i.classList.remove("active"));
 			// Add active class to the clicked item
 			this.classList.add("active");
+
+			// Reset the quiz
+			resetQuiz();
 
 			// Fetch the data-lecture-id value
 			const lectureId = this.getAttribute("data-lecture-id");
@@ -124,13 +136,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 				document.getElementById("player").style.display = "block";
 				toggleTextNoteVisibility(null); // Hide all text notes
 				togglePdfNoteVisibility(null); // Hide all PDF notes
-				// Hide all quizzes and reset the currentQuiz counter
-				document.querySelectorAll(".quiz").forEach((quiz) => {
-					quiz.style.display = "none";
-					quiz.parentElement.style.display = "none";
-				});
-				currentQuiz = 0;
-				
 				player.loadVideoById(activeLectureId);
 			} else if (lectureType === "text") {
 				activeLectureId = null;
