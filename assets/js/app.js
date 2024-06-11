@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	let player;
 	let activeLectureId;
 	let currentQuiz = 0;
-	const quizTimes = [5, 10, 15]; // Example quiz times in seconds
+	const quizTimes = [2, 10, 15]; // Example quiz times in seconds
 
 	// Function to find and log the active video lecture list item
 	function findAndLogActiveVideoLecture() {
@@ -86,9 +86,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	function submitAnswer(quizNumber) {
 		event.preventDefault(); // Prevent default form submission behavior
 		const quizElement = document.getElementById("quiz" + quizNumber);
-		const inputs = quizElement.querySelectorAll("input[type='radio']:checked");
+		console.log(quizElement);
+		const inputsR = quizElement.querySelectorAll("input[type='radio']:checked");
+		const inputsC = quizElement.querySelectorAll("input[type='checkbox']:checked");
 
-		if (inputs.length === 2) {
+		if (inputsR.length === 1 && inputsC.length === 1) {
 			quizElement.style.display = "none";
 			quizElement.classList.add("d-none");
 			currentQuiz++;
@@ -229,10 +231,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			pdfQuiz.classList.add("d-none");
 		});
 
-		submitQuizBtn.addEventListener("click", function () {
-			alert("Quiz submitted for PDF " + noteId);
-			// Add your code here to handle the quiz submission
-		});
+		// submitQuizBtn.addEventListener("click", function () {
+		// 	alert("Quiz submitted for PDF " + noteId);
+		// 	// Add your code here to handle the quiz submission
+		// });
 	}
 
 	// Call handlePdfInteractions for each PDF note

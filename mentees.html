@@ -251,33 +251,35 @@
 																			<i class="fa-solid fa-file-pdf"></i> Back to PDF
 																		</button>
 																	</div>
-																	<div class="form-group">
-																		<label for="answer1" class="quiz-question">Did you want to
-																			proceed to the next step?</label>
-																		<div class="form-check">
-																			<input class="form-check-input" type="radio" name="q1"
-																				id="q1" value="yes">
-																			<label class="form-check-label" for="q1">Yes</label>
+																	<form action>
+																		<div class="form-group">
+																			<label for="answer1" class="quiz-question">Did you want to
+																				proceed to the next step?</label>
+																			<div class="form-check">
+																				<input class="form-check-input" type="radio" name="q1"
+																					id="q1" value="yes">
+																				<label class="form-check-label" for="q1">Yes</label>
+																			</div>
+																			<div class="form-check">
+																				<input class="form-check-input" type="radio" name="q1"
+																					id="q2" value="no">
+																				<label class="form-check-label" for="q2">No</label>
+																			</div>
 																		</div>
-																		<div class="form-check">
-																			<input class="form-check-input" type="radio" name="q1"
-																				id="q2" value="no">
-																			<label class="form-check-label" for="q2">No</label>
+																		<div class="form-group">
+																			<label for="answer1" class="quiz-question">Do you agree with
+																				the terms?</label>
+																			<div class="form-check">
+																				<input class="form-check-input" type="checkbox" name="q2"
+																					id="q2" value="yes">
+																				<label class="form-check-label" for="q2">Yes</label>
+																			</div>
 																		</div>
-																	</div>
-																	<div class="form-group">
-																		<label for="answer1" class="quiz-question">Do you agree with
-																			the terms?</label>
-																		<div class="form-check">
-																			<input class="form-check-input" type="checkbox" name="q2"
-																				id="q2" value="yes">
-																			<label class="form-check-label" for="q2">Yes</label>
+																		<div class="form-group">
+																			<button class="btn btn-az-primary"
+																				submit-quiz>Submit</button>
 																		</div>
-																	</div>
-																	<div class="form-group">
-																		<button class="btn btn-az-primary"
-																			submit-quiz>Submit</button>
-																	</div>
+																	</form>
 																</div>
 															</div>
 														</div>
@@ -289,90 +291,29 @@
 
 									<div class="quiz-wrapper">
 										<div id="quiz1" class="quiz py-4">
-											<div class="form-group">
-												<label for="answer1" class="quiz-question">Did you want to proceed
-													to the next step?</label>
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="q1" id="q1a1"
-														value="yes">
-													<label class="form-check-label" for="q1a1">Yes</label>
+											<!-- <form action=""> -->
+												<div class="form-group">
+													<label for="answer1" class="quiz-question">Did you want to proceed to the next step?</label>
+													<div class="form-check">
+														<input class="form-check-input" type="radio" name="q1" id="q1a1" value="yes">
+														<label class="form-check-label" for="q1a1">Yes</label>
+													</div>
+													<div class="form-check">
+														<input class="form-check-input" type="radio" name="q1" id="q1a2" value="no">
+														<label class="form-check-label" for="q1a2">No</label>
+													</div>
 												</div>
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="q1" id="q1a2"
-														value="no">
-													<label class="form-check-label" for="q1a2">No</label>
+												<div class="form-group">
+													<label for="answer1" class="quiz-question">Do you agree with the terms?</label>
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" name="q2" id="q2a1" value="yes">
+														<label class="form-check-label" for="q2a1">Yes</label>
+													</div>
 												</div>
-											</div>
-											<div class="form-group">
-												<label for="answer1" class="quiz-question">Do you agree with the
-													terms?</label>
-												<div class="form-check">
-													<input class="form-check-input" type="checkbox" name="q2" id="q2a1"
-														value="yes">
-													<label class="form-check-label" for="q2a1">Yes</label>
+												<div class="form-group">
+													<button class="btn btn-az-primary" submit-quiz>Submit</button>
 												</div>
-											</div>
-											<div class="form-group">
-												<button class="btn btn-az-primary" submit-quiz>Submit</button>
-											</div>
-										</div>
-
-										<div id="quiz2" class="quiz py-4">
-											<div class="form-group">
-												<label for="answer1" class="quiz-question">Did you want to proceed
-													to the next step?</label>
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="q1" id="q1a1"
-														value="yes">
-													<label class="form-check-label" for="q1a1">Yes</label>
-												</div>
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="q1" id="q1a2"
-														value="no">
-													<label class="form-check-label" for="q1a2">No</label>
-												</div>
-											</div>
-											<div class="form-group">
-												<label for="answer1" class="quiz-question">Do you agree with the
-													terms?</label>
-												<div class="form-check">
-													<input class="form-check-input" type="checkbox" name="q2" id="q2a1"
-														value="yes">
-													<label class="form-check-label" for="q2a1">Yes</label>
-												</div>
-											</div>
-											<div class="form-group">
-												<button class="btn btn-az-primary" submit-quiz>Submit</button>
-											</div>
-										</div>
-
-										<div id="quiz3" class="quiz py-4">
-											<div class="form-group">
-												<label for="answer1" class="quiz-question">Did you want to proceed
-													to the next step?</label>
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="q1" id="q1a1"
-														value="yes">
-													<label class="form-check-label" for="q1a1">Yes</label>
-												</div>
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="q1" id="q1a2"
-														value="no">
-													<label class="form-check-label" for="q1a2">No</label>
-												</div>
-											</div>
-											<div class="form-group">
-												<label for="answer1" class="quiz-question">Do you agree with the
-													terms?</label>
-												<div class="form-check">
-													<input class="form-check-input" type="checkbox" name="q2" id="q2a1"
-														value="yes">
-													<label class="form-check-label" for="q2a1">Yes</label>
-												</div>
-											</div>
-											<div class="form-group">
-												<button class="btn btn-az-primary" submit-quiz>Submit</button>
-											</div>
+											<!-- </form> -->
 										</div>
 									</div>
 

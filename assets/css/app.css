@@ -1736,5 +1736,5 @@
 .pdf-header button {
   padding: 10px;
   margin-right: 5px;
-  cursor: pointer;
+  border-radius: 2px;
 }
