@@ -49,3 +49,18 @@ $font: "Roboto", sans-serif;
 		border-radius: 2px;
 	}
 }
+
+.table {
+	font-size: 18px;
+	font-weight: 500;
+
+	tr {
+		th {
+			font-size: inherit;
+		}
+
+		th, td {
+			vertical-align: middle;
+		}
+	}
+}

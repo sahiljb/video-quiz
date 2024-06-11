@@ -1738,3 +1738,14 @@
   margin-right: 5px;
   border-radius: 2px;
 }
+
+.table {
+  font-size: 18px;
+  font-weight: 500;
+}
+.table tr th {
+  font-size: inherit;
+}
+.table tr th, .table tr td {
+  vertical-align: middle;
+}
