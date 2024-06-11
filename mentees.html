@@ -199,12 +199,9 @@
 				</div>
 				<style>.table thead th,.table thead td{padding:15px 15px!important}.badge{position:relative;top:-1px;right:-5px;padding:5px 10px;border-radius:0%;background-color:red;color:#fff;font-size:13px}</style>
 
-				<div class="container">
-
-					<br><br>
+				<div class="container py-5">
 					<div class="row">
 						<div class="col-md-12">
-
 							<table class="table mg-b-0 dataTable no-footer">
 								<thead>
 									<tr>
@@ -218,13 +215,94 @@
 									</tr>
 								</thead>
 
-								<tbody><tr>
+								<tbody>
+									<tr>
 										<td>MPAC Mentee</td>
 										<td>Sample Course</td>
-										<td>35%</td>
-										<td><span class="badge">2</span></td>
+										<td>
+											<div class="progress-circle" data-progress="100" style="--course-progress: 100%;">
+												<span class="progress-text">100%</span>
+											</div>
+										</td>
+										<td>
+											<button type="button" class="btn btn-primary" data-toggle="modal"
+												data-target="#chatModal">
+												Open Chat
+											</button>
+											<!-- Modal -->
+											<div class="modal fade" id="chatModal" tabindex="-1" role="dialog"
+												aria-labelledby="chatModalLabel" aria-hidden="true">
+												<div class="modal-dialog modal-lg" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="chatModalLabel">Chat</h5>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<div class="chat-container">
+																<!-- Chat messages go here -->
+																<div class="message left">User 1: Hello!</div>
+																<div class="message right">User 2: Hi there!</div>
+																<!-- Example messages -->
+															</div>
+														</div>
+														<div class="modal-footer">
+															<input type="text" class="form-control"
+																placeholder="Type your message...">
+															<button type="button" class="btn btn-primary">Send</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
 										<td>3</td>
-										<td>1</td>
+										<td>
+											<button type="button" class="btn btn-primary review-button"
+												data-toggle="modal" data-target="#reviewModal" disabled>
+												Review
+											</button>
+											<!-- Review Modal -->
+											<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog"
+												aria-labelledby="reviewModalLabel" aria-hidden="true">
+												<div class="modal-dialog modal-lg" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="reviewModalLabel">Review</h5>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<p>Please provide your review here.</p>
+															<div class="star-rating">
+																<input type="radio" name="rating" id="star5" value="5"><label
+																	for="star5"></label>
+																<input type="radio" name="rating" id="star4" value="4"><label
+																	for="star4"></label>
+																<input type="radio" name="rating" id="star3" value="3"><label
+																	for="star3"></label>
+																<input type="radio" name="rating" id="star2" value="2"><label
+																	for="star2"></label>
+																<input type="radio" name="rating" id="star1" value="1"><label
+																	for="star1"></label>
+															</div>
+															<textarea class="form-control" rows="5"
+																placeholder="Type your review..."></textarea>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary"
+																data-dismiss="modal">Close</button>
+															<button type="button" class="btn btn-primary">Submit
+																Review</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
 										<td><a
 												href="https://mentor.w3creatives.com/employer_job_list?id=66&amp;mode=view"
 												class="btn btn-az-primary">View</a></td>
@@ -232,10 +310,90 @@
 									<tr>
 										<td>MPAC Mentee-1</td>
 										<td>Sample Course</td>
-										<td>35%</td>
-										<td><span class="badge">1</span></td>
+										<td>
+											<div class="progress-circle" data-progress="35" style="--course-progress: 35%;">
+												<span class="progress-text">35%</span>
+											</div>
+										</td>
+										<td>
+											<button type="button" class="btn btn-primary" data-toggle="modal"
+												data-target="#chatModal">
+												Open Chat
+											</button>
+											<!-- Modal -->
+											<div class="modal fade" id="chatModal" tabindex="-1" role="dialog"
+												aria-labelledby="chatModalLabel" aria-hidden="true">
+												<div class="modal-dialog modal-lg" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="chatModalLabel">Chat</h5>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<div class="chat-container">
+																<!-- Chat messages go here -->
+																<div class="message">User 1: Hello!</div>
+																<div class="message">User 2: Hi there!</div>
+																<!-- Example messages -->
+															</div>
+														</div>
+														<div class="modal-footer">
+															<input type="text" class="form-control"
+																placeholder="Type your message...">
+															<button type="button" class="btn btn-primary">Send</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
 										<td>3</td>
-										<td>1</td>
+										<td>
+											<button type="button" class="btn btn-primary review-button"
+												data-toggle="modal" data-target="#reviewModal" disabled>
+												Review
+											</button>
+											<!-- Review Modal -->
+											<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog"
+												aria-labelledby="reviewModalLabel" aria-hidden="true">
+												<div class="modal-dialog modal-lg" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="reviewModalLabel">Review</h5>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<p>Please provide your review here.</p>
+															<div class="star-rating">
+																<input type="radio" name="rating" id="star5" value="5"><label
+																	for="star5"></label>
+																<input type="radio" name="rating" id="star4" value="4"><label
+																	for="star4"></label>
+																<input type="radio" name="rating" id="star3" value="3"><label
+																	for="star3"></label>
+																<input type="radio" name="rating" id="star2" value="2"><label
+																	for="star2"></label>
+																<input type="radio" name="rating" id="star1" value="1"><label
+																	for="star1"></label>
+															</div>
+															<textarea class="form-control" rows="5"
+																placeholder="Type your review..."></textarea>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary"
+																data-dismiss="modal">Close</button>
+															<button type="button" class="btn btn-primary">Submit
+																Review</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
 										<td><a
 												href="https://mentor.w3creatives.com/employer_job_list?id=66&amp;mode=view"
 												class="btn btn-az-primary">View</a></td>
@@ -243,10 +401,90 @@
 									<tr>
 										<td>MPAC Mentee-2</td>
 										<td>Sample Course</td>
-										<td>35%</td>
-										<td><span class="badge">0</span></td>
+										<td>
+											<div class="progress-circle" data-progress="50" style="--course-progress: 50%;">
+												<span class="progress-text">50%</span>
+											</div>
+										</td>
+										<td>
+											<button type="button" class="btn btn-primary" data-toggle="modal"
+												data-target="#chatModal">
+												Open Chat
+											</button>
+											<!-- Modal -->
+											<div class="modal fade" id="chatModal" tabindex="-1" role="dialog"
+												aria-labelledby="chatModalLabel" aria-hidden="true">
+												<div class="modal-dialog modal-lg" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="chatModalLabel">Chat</h5>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<div class="chat-container">
+																<!-- Chat messages go here -->
+																<div class="message">User 1: Hello!</div>
+																<div class="message">User 2: Hi there!</div>
+																<!-- Example messages -->
+															</div>
+														</div>
+														<div class="modal-footer">
+															<input type="text" class="form-control"
+																placeholder="Type your message...">
+															<button type="button" class="btn btn-primary">Send</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
 										<td>3</td>
-										<td>1</td>
+										<td>
+											<button type="button" class="btn btn-primary review-button"
+												data-toggle="modal" data-target="#reviewModal" disabled>
+												Review
+											</button>
+											<!-- Review Modal -->
+											<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog"
+												aria-labelledby="reviewModalLabel" aria-hidden="true">
+												<div class="modal-dialog modal-lg" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="reviewModalLabel">Review</h5>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<p>Please provide your review here.</p>
+															<div class="star-rating">
+																<input type="radio" name="rating" id="star5" value="5"><label
+																	for="star5"></label>
+																<input type="radio" name="rating" id="star4" value="4"><label
+																	for="star4"></label>
+																<input type="radio" name="rating" id="star3" value="3"><label
+																	for="star3"></label>
+																<input type="radio" name="rating" id="star2" value="2"><label
+																	for="star2"></label>
+																<input type="radio" name="rating" id="star1" value="1"><label
+																	for="star1"></label>
+															</div>
+															<textarea class="form-control" rows="5"
+																placeholder="Type your review..."></textarea>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary"
+																data-dismiss="modal">Close</button>
+															<button type="button" class="btn btn-primary">Submit
+																Review</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
 										<td><a
 												href="https://mentor.w3creatives.com/employer_job_list?id=66&amp;mode=view"
 												class="btn btn-az-primary">View</a></td>
@@ -254,10 +492,90 @@
 									<tr>
 										<td>MPAC Mentee-3</td>
 										<td>Sample Course</td>
-										<td>35%</td>
-										<td><span class="badge">0</span></td>
+										<td>
+											<div class="progress-circle" data-progress="20" style="--course-progress: 20%;">
+												<span class="progress-text">20%</span>
+											</div>
+										</td>
+										<td>
+											<button type="button" class="btn btn-primary" data-toggle="modal"
+												data-target="#chatModal">
+												Open Chat
+											</button>
+											<!-- Modal -->
+											<div class="modal fade" id="chatModal" tabindex="-1" role="dialog"
+												aria-labelledby="chatModalLabel" aria-hidden="true">
+												<div class="modal-dialog modal-lg" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="chatModalLabel">Chat</h5>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<div class="chat-container">
+																<!-- Chat messages go here -->
+																<div class="message">User 1: Hello!</div>
+																<div class="message">User 2: Hi there!</div>
+																<!-- Example messages -->
+															</div>
+														</div>
+														<div class="modal-footer">
+															<input type="text" class="form-control"
+																placeholder="Type your message...">
+															<button type="button" class="btn btn-primary">Send</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
 										<td>3</td>
-										<td>1</td>
+										<td>
+											<button type="button" class="btn btn-primary review-button"
+												data-toggle="modal" data-target="#reviewModal" disabled>
+												Review
+											</button>
+											<!-- Review Modal -->
+											<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog"
+												aria-labelledby="reviewModalLabel" aria-hidden="true">
+												<div class="modal-dialog modal-lg" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="reviewModalLabel">Review</h5>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<p>Please provide your review here.</p>
+															<div class="star-rating">
+																<input type="radio" name="rating" id="star5" value="5"><label
+																	for="star5"></label>
+																<input type="radio" name="rating" id="star4" value="4"><label
+																	for="star4"></label>
+																<input type="radio" name="rating" id="star3" value="3"><label
+																	for="star3"></label>
+																<input type="radio" name="rating" id="star2" value="2"><label
+																	for="star2"></label>
+																<input type="radio" name="rating" id="star1" value="1"><label
+																	for="star1"></label>
+															</div>
+															<textarea class="form-control" rows="5"
+																placeholder="Type your review..."></textarea>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary"
+																data-dismiss="modal">Close</button>
+															<button type="button" class="btn btn-primary">Submit
+																Review</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
 										<td><a
 												href="https://mentor.w3creatives.com/employer_job_list?id=66&amp;mode=view"
 												class="btn btn-az-primary">View</a></td>
@@ -265,10 +583,90 @@
 									<tr>
 										<td>MPAC Mentee-4</td>
 										<td>Sample Course</td>
-										<td>35%</td>
-										<td><span class="badge">0</span></td>
+										<td>
+											<div class="progress-circle" data-progress="80" style="--course-progress: 80%;">
+												<span class="progress-text">80%</span>
+											</div>
+										</td>
+										<td>
+											<button type="button" class="btn btn-primary" data-toggle="modal"
+												data-target="#chatModal">
+												Open Chat
+											</button>
+											<!-- Modal -->
+											<div class="modal fade" id="chatModal" tabindex="-1" role="dialog"
+												aria-labelledby="chatModalLabel" aria-hidden="true">
+												<div class="modal-dialog modal-lg" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="chatModalLabel">Chat</h5>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<div class="chat-container">
+																<!-- Chat messages go here -->
+																<div class="message">User 1: Hello!</div>
+																<div class="message">User 2: Hi there!</div>
+																<!-- Example messages -->
+															</div>
+														</div>
+														<div class="modal-footer">
+															<input type="text" class="form-control"
+																placeholder="Type your message...">
+															<button type="button" class="btn btn-primary">Send</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
 										<td>3</td>
-										<td>1</td>
+										<td>
+											<button type="button" class="btn btn-primary review-button"
+												data-toggle="modal" data-target="#reviewModal" disabled>
+												Review
+											</button>
+											<!-- Review Modal -->
+											<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog"
+												aria-labelledby="reviewModalLabel" aria-hidden="true">
+												<div class="modal-dialog modal-lg" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="reviewModalLabel">Review</h5>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<p>Please provide your review here.</p>
+															<div class="star-rating">
+																<input type="radio" name="rating" id="star5" value="5"><label
+																	for="star5"></label>
+																<input type="radio" name="rating" id="star4" value="4"><label
+																	for="star4"></label>
+																<input type="radio" name="rating" id="star3" value="3"><label
+																	for="star3"></label>
+																<input type="radio" name="rating" id="star2" value="2"><label
+																	for="star2"></label>
+																<input type="radio" name="rating" id="star1" value="1"><label
+																	for="star1"></label>
+															</div>
+															<textarea class="form-control" rows="5"
+																placeholder="Type your review..."></textarea>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary"
+																data-dismiss="modal">Close</button>
+															<button type="button" class="btn btn-primary">Submit
+																Review</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
 										<td><a
 												href="https://mentor.w3creatives.com/employer_job_list?id=66&amp;mode=view"
 												class="btn btn-az-primary">View</a></td>
@@ -276,10 +674,90 @@
 									<tr>
 										<td>MPAC Mentee-5</td>
 										<td>Sample Course</td>
-										<td>35%</td>
-										<td><span class="badge">0</span></td>
+										<td>
+											<div class="progress-circle" data-progress="100" style="--course-progress: 100%;">
+												<span class="progress-text">100%</span>
+											</div>
+										</td>
+										<td>
+											<button type="button" class="btn btn-primary" data-toggle="modal"
+												data-target="#chatModal">
+												Open Chat
+											</button>
+											<!-- Modal -->
+											<div class="modal fade" id="chatModal" tabindex="-1" role="dialog"
+												aria-labelledby="chatModalLabel" aria-hidden="true">
+												<div class="modal-dialog modal-lg" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="chatModalLabel">Chat</h5>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<div class="chat-container">
+																<!-- Chat messages go here -->
+																<div class="message">User 1: Hello!</div>
+																<div class="message">User 2: Hi there!</div>
+																<!-- Example messages -->
+															</div>
+														</div>
+														<div class="modal-footer">
+															<input type="text" class="form-control"
+																placeholder="Type your message...">
+															<button type="button" class="btn btn-primary">Send</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
 										<td>3</td>
-										<td>1</td>
+										<td>
+											<button type="button" class="btn btn-primary review-button"
+												data-toggle="modal" data-target="#reviewModal" disabled>
+												Review
+											</button>
+											<!-- Review Modal -->
+											<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog"
+												aria-labelledby="reviewModalLabel" aria-hidden="true">
+												<div class="modal-dialog modal-lg" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="reviewModalLabel">Review</h5>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<p>Please provide your review here.</p>
+															<div class="star-rating">
+																<input type="radio" name="rating" id="star5" value="5"><label
+																	for="star5"></label>
+																<input type="radio" name="rating" id="star4" value="4"><label
+																	for="star4"></label>
+																<input type="radio" name="rating" id="star3" value="3"><label
+																	for="star3"></label>
+																<input type="radio" name="rating" id="star2" value="2"><label
+																	for="star2"></label>
+																<input type="radio" name="rating" id="star1" value="1"><label
+																	for="star1"></label>
+															</div>
+															<textarea class="form-control" rows="5"
+																placeholder="Type your review..."></textarea>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary"
+																data-dismiss="modal">Close</button>
+															<button type="button" class="btn btn-primary">Submit
+																Review</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
 										<td><a
 												href="https://mentor.w3creatives.com/employer_job_list?id=66&amp;mode=view"
 												class="btn btn-az-primary">View</a></td>
@@ -289,7 +767,6 @@
 
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>

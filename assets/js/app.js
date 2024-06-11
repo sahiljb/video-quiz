@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", (event) => {
+
+	// Start Review
+	var progressCircles = document.querySelectorAll(".progress-circle");
+	progressCircles.forEach(function (circle) {
+		var progress = circle.getAttribute("data-progress");
+		if (progress === "100") {
+			var reviewButton = circle.closest("tr").querySelector(".review-button");
+			reviewButton.disabled = false;
+		}
+	});
+	// End Review
+
 	// Load the YouTube Iframe API script
 	var tag = document.createElement("script");
 	tag.src = "https://www.youtube.com/iframe_api";
