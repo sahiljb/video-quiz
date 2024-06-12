@@ -184,6 +184,8 @@ $font: "Roboto", sans-serif;
 	overflow: hidden;
 	list-style-type: none;
 	position: relative;
+	display: flex;
+	flex-direction: column-reverse;
 
 	&:before {
 		content: ' ';
@@ -197,7 +199,6 @@ $font: "Roboto", sans-serif;
 	}
 
 	& > li {
-		margin: 20px 0;
 		padding-left: 50px;
 
 		&:before {

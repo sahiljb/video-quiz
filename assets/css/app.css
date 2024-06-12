@@ -1867,6 +1867,8 @@
   overflow: hidden;
   list-style-type: none;
   position: relative;
+  display: flex;
+  flex-direction: column-reverse;
 }
 .timeline:before {
   content: " ";
@@ -1879,7 +1881,6 @@
   z-index: 400;
 }
 .timeline > li {
-  margin: 20px 0;
   padding-left: 50px;
 }
 .timeline > li:before {
