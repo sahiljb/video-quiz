@@ -1862,3 +1862,35 @@
   opacity: 0.4;
   color: #FFD700;
 }
+
+.timeline {
+  overflow: hidden;
+  list-style-type: none;
+  position: relative;
+}
+.timeline:before {
+  content: " ";
+  background: #003157;
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+.timeline > li {
+  margin: 20px 0;
+  padding-left: 50px;
+}
+.timeline > li:before {
+  content: " ";
+  background: #fff;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #1976d2;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}

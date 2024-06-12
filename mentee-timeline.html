@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>YouTube Video with Quiz</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet"
+			href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
+		<link rel="stylesheet"
+			href="https://mentor.w3creatives.com/lib/select2/css/select2.min.css">
+		<script
+			src="https://mentor.w3creatives.com/lib/jquery/jquery.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+
+		<link rel="stylesheet" href="https://mentor.w3creatives.com/css/lambton.css">
+		<link rel="stylesheet" href="https://mentor.w3creatives.com/css/sarnia.css">
+		<style
+			type="text/css">.nav-item .active.nav-link{border-bottom:1px solid #fff;border-radius:0!important}</style>
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="assets/css/app.css">
+	</head>
+	<body>
+		<div class="diagonal3 ">
+			<div class="container ">
+				<div class="row">
+					<div class="col-md-4 logo-block">
+						<a href="/">
+							<div style="padding: 10px; border: 1px solid #333">
+								<h1 style="font-size: 35px;">MPAC</h1>
+								<h3>For Mentors &amp; Mentees</h3>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-2 diagonal">
+					</div>
+					<div class="col-md-3 diagonal2">
+						<div class>
+							<p class="welcome">
+								MPAC Address <br>
+								Phone: 123-456-7890 <br>
+								Fax: 123-456-7890
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar1 navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<div class="mynavbar">
+					<div class>
+						<button class="navbar-toggler" type="button" data-toggle="collapse"
+							data-target="#navbarSupportedContent"
+							aria-controls="navbarSupportedContent" aria-expanded="false"
+							aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+
+						<div class="nav-header">
+							<div class="nav-title">
+								<p class="nav-mini">For Mentor &amp; Mentee <br>Seeking a Course
+									Match</p>
+							</div>
+
+						</div>
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav mr-auto">
+								<li class="nav-item foldy">
+									<a class="nav-link " href="/">Home <span
+											class="sr-only">(current)</span></a>
+								</li>
+								<li class="nav-item">
+									<a class="current-opportunities nav-link active"
+										href="/available_apprenticeships">Courses</a>
+
+								</li>
+								<li class="nav-item dropdown employer-menu">
+									<a class="nav-link dropdown-toggle " href="#" id="navbarDropdown"
+										role="button" data-toggle="dropdown" aria-haspopup="true"
+										aria-expanded="false">
+										Mentor
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href="/employer_job_list">Open Courses</a>
+										<a class="dropdown-item" href="/employer_job_post">Post Course</a>
+										<a class="dropdown-item" href="/employer_update_profile">Profile</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item employer-register"
+											href="/signup/mentor?link=register">Register</a>
+										<a class="dropdown-item employer-sign-in"
+											href="/signup/mentor?link=signin">Sign In</a>
+									</div>
+								</li>
+								<li class="nav-item dropdown apprentice-menu">
+									<a class="nav-link dropdown-toggle " href="#" id="navbarDropdown1"
+										role="button" data-toggle="dropdown" aria-haspopup="true"
+										aria-expanded="false">
+										Mentee
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+										<a class="dropdown-item" href="/employee_job_matches">Matched Courses
+										</a>
+										<a class="dropdown-item" href="/employee_update_profile">Profile</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item apprentice-register"
+											href="/signup/mentee?link=register">Register</a>
+										<a class="dropdown-item apprentice-sign-in"
+											href="/signup/mentee?link=signin">Sign In</a>
+									</div>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link " href="/frequently-asked-questions">FAQs</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link " href="/contact">Contact</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div class="container1">
+			<div class="dropdown az-profile-menu contrast-div">
+				<a href="javascript:void(0);" class="btntogglediv contrast-position"
+					aria-hidden="true" id="contrast-icon-white-chair">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+						fill="currentColor" width="1em">
+						<g><path
+								d="M60.4,78.9c-2.2,4.1-5.3,7.4-9.2,9.8c-4,2.4-8.3,3.6-13,3.6c-6.9,0-12.8-2.4-17.7-7.3c-4.9-4.9-7.3-10.8-7.3-17.7c0-5,1.4-9.5,4.1-13.7c2.7-4.2,6.4-7.2,10.9-9.2l-0.9-7.3c-6.3,2.3-11.4,6.2-15.3,11.8C7.9,54.4,6,60.6,6,67.3c0,5.8,1.4,11.2,4.3,16.1s6.8,8.8,11.7,11.7c4.9,2.9,10.3,4.3,16.1,4.3c7,0,13.3-2.1,18.9-6.2c5.7-4.1,9.6-9.5,11.7-16.2l-5.7-11.4C63.5,70.4,62.5,74.8,60.4,78.9z"></path><path
+								d="M93.8,71.3l-11.1,5.5L70,51.4c-0.6-1.3-1.7-2-3.2-2H41.3l-0.9-7.2h22.7v-7.2H39.6L37.5,19c2.5,0.3,4.8-0.5,6.7-2.3c1.9-1.8,2.9-4,2.9-6.6c0-2.5-0.9-4.6-2.6-6.3c-1.8-1.8-3.9-2.6-6.3-2.6c-2,0-3.8,0.6-5.4,1.8c-1.6,1.2-2.7,2.7-3.2,4.6c-0.3,1-0.4,1.8-0.3,2.3l5.4,43.5c0.1,0.9,0.5,1.6,1.2,2.3c0.7,0.6,1.5,0.9,2.4,0.9h26.4l13.4,26.7c0.6,1.3,1.7,2,3.2,2c0.6,0,1.1-0.1,1.6-0.4L97,77.7L93.8,71.3z"></path></g>
+					</svg>
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item zoom-out-a" href="javascript:void(0);">
+						<span class>
+							<svg version="1.1" style="color: seagreen"
+								xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+								<path fill="currentColor"
+									d="M256 200v16c0 4.25-3.75 8-8 8h-56v56c0 4.25-3.75 8-8 8h-16c-4.25 0-8-3.75-8-8v-56h-56c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h56v-56c0-4.25 3.75-8 8-8h16c4.25 0 8 3.75 8 8v56h56c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z"></path>
+							</svg>
+						</span>
+						Decrease Text
+					</a>
+
+					<a class="dropdown-item zoom-in-a" href="javascript:void(0);">
+						<span class>
+							<svg version="1.1" style="color: seagreen"
+								xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448">
+								<path fill="currentColor"
+									d="M256 200v16c0 4.25-3.75 8-8 8h-56v56c0 4.25-3.75 8-8 8h-16c-4.25 0-8-3.75-8-8v-56h-56c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h56v-56c0-4.25 3.75-8 8-8h16c4.25 0 8 3.75 8 8v56h56c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z"></path>
+							</svg>
+						</span>
+						Increase Text
+					</a>
+
+					<a class="dropdown-item highlighttext" href="javascript:void(0);">
+						<span class>
+							<svg version="1.1" style="color: red" xmlns="http://www.w3.org/2000/svg"
+								width="1em" viewBox="0 0 448 448">
+								<path fill="currentColor"
+									d="M192 360v-272c-75 0-136 61-136 136s61 136 136 136zM384 224c0 106-86 192-192 192s-192-86-192-192 86-192 192-192 192 86 192 192z"></path>
+							</svg>
+						</span>
+						High Contrast
+					</a>
+				</div>
+			</div>
+			<div class="page-body">
+				<div class="container alert d-none ajax-response-container  mg-t-4"
+					role="alert">
+					<button type="button" class="close" data-dismiss="alert"
+						aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="container">
+					<br><br>
+					<div class="row flex-column-reverse flex-lg-row">
+						<div class="col-md-12">
+							<h4 style="line-height: 30px">Sign up as a mentee on our platform to
+								access MPAC courses and set your learning goals.</h4>
+							<br>
+							<ul class="timeline">
+								<li>
+									<p>Navigate to the signup page and select the "Mentee" registration option.</p>
+								</li>
+								<li>
+									<p>Fill in your name, email address, and create a password.</p>
+								</li>
+								<li>
+									<p>Provide additional profile information such as age, educational background, and interests.</p>
+								</li>
+								<li>
+									<p>Check your email for a verification link and click it to verify your email address.</p>
+								</li>
+								<li>
+									<p>Choose your learning preferences, areas of interest for mentoring, and desired courses.</p>
+								</li>
+								<li>
+									<p>Browse the course catalog, select courses of interest, and enroll in them to start learning.</p>
+								</li>
+							</ul>
+						</div>
+					</div><!-- az-column-signup-left -->
+				</div>
+			</div>
+		</div>
+
+		<footer class="pt-4 my-md-0 pt-md-5 d-none d-sm-block foot"></footer>
+		<footer class="pt-4 my-md-0 pt-md-5 d-block d-sm-none foot-1"></footer>
+		<div class="container d-none d-sm-block">
+			<div class="p-20-10-a-center">
+				<div class="row">
+					<div class="col-md-5 a-center">
+						© W3 Creatives 2024. All rights reserved.
+					</div>
+					<div class="col-md-2" style="text-align: center; ">
+						<nav class="lead-social-menu mb-4 mb-sm-0">
+							<span class="iconify" data-icon="file-icons:a"></span>
+							<a href="javascript:void(0);" class="zoom-out-a">A-</a>
+							<a href="javascript:void(0);" class="reset-a">A</a>
+							<a href="javascript:void(0);" class="zoom-in-a">A+</a>
+							<a href="javascript:void(0);" class="highlighttext"><i
+									class="typcn icon typcn-adjust-contrast tx-20 text-dark"></i></a>
+						</nav>
+					</div>
+					<div class="col-md-5" style="text-align: center; ">
+						<span class="color-black">Developed by <a target="_blank"
+								class="color-black" href="https://www.w3creatives.com">W3 Creatives</a>
+							&amp;<a target="_blank" class="color-black"
+								href="https://www.jumpute.com"> Powered by Jumpute</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script
+			src="https://mentor.w3creatives.com/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script
+			src="https://mentor.w3creatives.com/lib/parsleyjs/parsley.min.js"></script>
+		<script src="https://mentor.w3creatives.com/js/sarnia-lambton.js"></script>
+		<script
+			src="https://mentor.w3creatives.com/lib/select2/js/select2.min.js"></script>
+		<script src="https://mentor.w3creatives.com/js/custom.js"></script>
+		<!-- Custom JS -->
+		<script src="assets/js/app.js"></script>
+	</body>
+</html>
